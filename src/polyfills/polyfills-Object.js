@@ -52,6 +52,6 @@ if(!Object.entries) {
 if (!Object.assign) {
     Object.assign = function(object) {
         var result = {};
-        Object.keys(object).fo
+       // Object.keys(object).fo
     }
 }
