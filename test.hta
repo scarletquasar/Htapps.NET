@@ -7,7 +7,7 @@
     </head>
     <body>
         <script>
-            var a = {a: 1, b:2};
+            var a = Object.assign({a: 1, b:2}, {c: 1, d:2});
             Object.entries(a).forEach(function(x) {
                 document.writeln(x);
             });

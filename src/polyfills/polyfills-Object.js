@@ -54,7 +54,7 @@ if (!Object.assign) {
         var result = {};
         Array.from(arguments).forEach(function(x) {
             Object.keys(x).forEach(function(n) {
-                result[n] = object[n];
+                result[n] = x[n];
             });
         });
         return result;
