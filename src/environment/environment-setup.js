@@ -5,3 +5,9 @@ window.console = {
         window.console.output.push(args);
     }    
 };
+
+window.config = {
+    async: {
+        usePromises: false
+    }
+}

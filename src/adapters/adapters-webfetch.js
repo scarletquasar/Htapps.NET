@@ -13,3 +13,5 @@ var fetch = function(target, attributes = {}) {
     xhr.open(attributes.method, "https://jsonplaceholder.typicode.com/todos/1");
     xhr.send(null);
 }
+
+//Not Finished
