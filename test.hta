@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script src="./src/environment/environment-setup.js"></script>
         <script src="./src/polyfills/polyfills-function.js" type="text/javascript"></script>
         <script src="./src/polyfills/polyfills-document.js" type="text/javascript"></script>
         <script src="./src/polyfills/polyfills-Object.js" type="text/javascript"></script>
@@ -7,10 +8,20 @@
     </head>
     <body>
         <script>
-            var a = Object.assign({a: 1, b:2}, {c: 1, d:2});
-            Object.entries(a).forEach(function(x) {
-                document.writeln(x);
-            });
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    console.log(xhr.responseText);
+                }
+                else {
+                    console.log(xhr.readyState);
+                }
+            }
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+            xhr.send(null);
+
+            
         </script>
+
     </body>
 </html>
