@@ -50,8 +50,13 @@ if(!Object.entries) {
 }
 
 if (!Object.assign) {
-    Object.assign = function(object) {
+    Object.assign = function() {
         var result = {};
-       // Object.keys(object).fo
+        Array.from(arguments).forEach(function(x) {
+            Object.keys(x).forEach(function(n) {
+                result[n] = object[n];
+            });
+        });
+        return result;
     }
 }
