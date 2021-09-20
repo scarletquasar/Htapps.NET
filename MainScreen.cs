@@ -67,6 +67,7 @@ namespace Htapps
                     using (Stream stream = response.GetResponseStream())
                     using (StreamReader streamReader = new StreamReader(stream))
                     {
+                        MessageBox.Show(streamReader.ReadToEnd());
                         return streamReader.ReadToEnd();
                     }
                 }
