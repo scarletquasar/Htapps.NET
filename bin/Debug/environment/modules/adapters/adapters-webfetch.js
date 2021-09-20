@@ -16,7 +16,6 @@ var fetch = function(target, attributes) {
                 JSON.stringify(attributes.body),
                 callback
             );
-
         }
     }
 }
