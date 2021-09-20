@@ -5,7 +5,7 @@ function ___checkFor(resultName, action) {
             return;
         }
         else {
-            ___checkFor(resultName);
+            ___checkFor(resultName, action);
         }
     }, 300);
 }
