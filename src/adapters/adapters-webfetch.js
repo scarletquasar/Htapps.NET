@@ -1,5 +1,5 @@
 var fetch = function(target, attributes) {
-    if(global.config.time.dynamicWebFetch) {
+    if(!global.config.time.dynamicWebFetch) {
         if(!attributes) attributes = {};
         if(!attributes.headers) attributes["headers"] = {};
         if(!attributes.method) attributes["method"] = "GET";
