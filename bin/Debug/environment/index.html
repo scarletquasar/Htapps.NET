@@ -18,12 +18,14 @@
             use("modules/adapters/adapters-webfetch.js");
         </script>
         <script>
-            function xexo() {
-                fetch('https://jsonplaceholder.typicode.com/todos/1');
+            function pick() {
+                fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=200').then(function(x) {alert(x) });
             }
         </script>
-        <button onClick="xexo()">asdaas</button>
-
+        <button onClick="pick()">Pick Info</button>
+        <button>
+            Other Button for Interaction
+        </button>
         
     </body>
 

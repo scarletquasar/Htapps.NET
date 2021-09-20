@@ -32,9 +32,10 @@ namespace Htapps
             MessageBox.Show(text, message);
         }
 
-        public async Task<string> WebFetch(string target, string method, string content_type, string headers, string body)
+        public async Task<string> WebFetch(string target, string method, string content_type, string headers, string body, string callback)
         {
-            return await Task.Run(() => {
+            string result = string.Empty;
+            await Task.Run(() => {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(target);
                 httpWebRequest.Method = method;
 
@@ -58,7 +59,9 @@ namespace Htapps
                     var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                     using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                     {
-                        return streamReader.ReadToEnd();
+                        string javascript = "(" + callback + ")(" + streamReader.ReadToEnd() + ")";
+                        browserScreen.Document.InvokeScript("eval", new object[] { javascript });
+                        result = javascript;
                     }
                 }
                 else
@@ -67,11 +70,19 @@ namespace Htapps
                     using (Stream stream = response.GetResponseStream())
                     using (StreamReader streamReader = new StreamReader(stream))
                     {
-                        MessageBox.Show(streamReader.ReadToEnd());
-                        return streamReader.ReadToEnd();
+                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
+                        result = javascript;
                     }
                 }
             });
+
+            HtmlDocument doc = browserScreen.Document;
+            HtmlElement head = doc.GetElementsByTagName("head")[0];
+            HtmlElement s = doc.CreateElement("script");
+            s.SetAttribute("text", result);
+            head.AppendChild(s);
+
+            return result;
         }
     }
 }
