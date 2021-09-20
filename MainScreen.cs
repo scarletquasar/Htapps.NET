@@ -59,8 +59,7 @@ namespace Htapps
                     var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                     using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                     {
-                        string javascript = "(" + callback + ")(" + streamReader.ReadToEnd() + ")";
-                        browserScreen.Document.InvokeScript("eval", new object[] { javascript });
+                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
                         result = javascript;
                     }
                 }
