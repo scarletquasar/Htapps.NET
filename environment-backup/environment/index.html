@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=9" />
+        <script>
+            function use(url) { window.external.Import(url); }
+        </script>
+    </head>
+    <body>
+        <!--Application Imports-->
+        <script>
+            use("modules/libraries/bluebird.min.js");
+            use("modules/libraries/environment-setup.js");
+            use("modules/polyfills/polyfills-array.js");
+            use("modules/polyfills/polyfills-document.js");
+            use("modules/polyfills/polyfills-Object.js");
+            use("modules/adapters/adapters-sleep.js");
+            use("modules/adapters/adapters-async.js");
+            use("modules/adapters/adapters-webfetch.js");
+        </script>
+        <script>
+            function xexo() {
+                fetch('https://jsonplaceholder.typicode.com/todos/1');
+            }
+        </script>
+        <button onClick="xexo()">asdaas</button>
+
+        
+    </body>
+
+</html>
