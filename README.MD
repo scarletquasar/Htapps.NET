@@ -1,4 +1,4 @@
-### List of adapted features
+### List of adapted features (which don't or can't have polyfill yet)
 
 **GLOBAL** <br>
 
