@@ -2,8 +2,7 @@ var bindGlobals = {};
 var global = {
     config: {
         time: {
-            usePromises: false,
-            dynamicWebFetch: true
+            usePromises: false
         }
     }
 }
@@ -15,7 +14,3 @@ console = {
         window.console.output.push(args);
     }    
 };
-
-function createMethod(name, action) {
-    eval(name + " = " + action);
-}

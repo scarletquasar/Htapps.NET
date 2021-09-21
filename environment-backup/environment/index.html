@@ -1,29 +1,50 @@
 <html>
     <head>
-        <meta http-equiv="x-ua-compatible" content="ie=9" />
-        <script>
-            function use(url) { window.external.Import(url); }
-        </script>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <script>function use(url) { window.external.Import(url); }</script>
+        <style>
+            button {
+                transition: 1s;
+            }
+
+            button:hover {
+                background-color: red;
+            }
+        </style>
     </head>
     <body>
         <!--Application Imports-->
         <script>
-            use("modules/libraries/bluebird.min.js");
             use("modules/libraries/environment-setup.js");
+            use("modules/libraries/bluebird.min.js");
+            use("modules/libraries/flexie.js");
+            use("modules/polyfills/polyfills-string.js");
+            use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
             use("modules/polyfills/polyfills-document.js");
             use("modules/polyfills/polyfills-Object.js");
             use("modules/adapters/adapters-sleep.js");
             use("modules/adapters/adapters-async.js");
             use("modules/adapters/adapters-webfetch.js");
+            use("modules/adapters/adapters-eventListener.js");
         </script>
+
+        <button onClick="pick()">Pick Info</button>
+        <button id="test">
+            Other Button for Interaction
+        </button>
         <script>
-            function xexo() {
-                fetch('https://jsonplaceholder.typicode.com/todos/1');
+            
+            function pick() {
+                fetch('https://jsonplaceholder.typicode.com/posts/1', {
+                    method: "PUT",
+                    body: {}
+                }).and(function(x) {
+                    var target = document.querySelector("#test");
+                    global.addEventListener(target, "onclick", function(){alert(x)});
+                });
             }
         </script>
-        <button onClick="xexo()">asdaas</button>
-
         
     </body>
 
