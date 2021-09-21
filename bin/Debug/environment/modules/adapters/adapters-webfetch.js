@@ -7,7 +7,7 @@ var fetch = function(target, attributes) {
 
 
     return {
-        then: function(callback) {
+        and: function(callback) {
             window.external.WebFetch(
                 target,
                 attributes.method,
