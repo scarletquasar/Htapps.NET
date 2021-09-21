@@ -4,8 +4,11 @@
 **`Animations (keyframe adapters using transitions)`**<br>
 **`Display Grid support`**<br>
 **`localStorage support`**<br>
+**`global.addEventListener devlopment`**<br>
 **`cookies support`**<br>
 **`devtools adapter`**<br>
+**`screen resizer`**<br>
+**`responsivity trigger`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
 
