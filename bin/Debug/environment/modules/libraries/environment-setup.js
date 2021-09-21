@@ -2,8 +2,7 @@ var bindGlobals = {};
 var global = {
     config: {
         time: {
-            usePromises: false,
-            dynamicWebFetch: true
+            usePromises: false
         }
     }
 }
