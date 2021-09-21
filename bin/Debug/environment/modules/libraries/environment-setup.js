@@ -14,7 +14,3 @@ console = {
         window.console.output.push(args);
     }    
 };
-
-function createMethod(name, action) {
-    eval(name + " = " + action);
-}
