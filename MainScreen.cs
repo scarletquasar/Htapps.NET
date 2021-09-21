@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using System.Drawing;
+
 namespace Htapps
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
@@ -30,6 +32,12 @@ namespace Htapps
         public void Alert(string text, string message)
         {
             MessageBox.Show(text, message);
+        }
+
+        public void ResizeScreen(int x, int y)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(x, y);
         }
 
         //Web Fetch Functions
@@ -102,6 +110,8 @@ namespace Htapps
                 return "empty";
             }
         }
+
+
     }
 }
 
