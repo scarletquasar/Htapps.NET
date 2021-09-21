@@ -23,6 +23,6 @@
 
 ### Libraries:
 
-https://github.com/doctyper/flexie - Flexbox Support<br>
+https://github.com/jonathantneal/flexibility - Flexbox Support<br>
 https://github.com/petkaantonov/bluebird/ - Promises Alternative Support
 
