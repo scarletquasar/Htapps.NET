@@ -9,6 +9,7 @@
 **`devtools adapter` [In Progress]**<br>
 **`screen resizer`**<br>
 **`responsivity trigger`**<br>
+**`EcmaScript arrow functions`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
 
