@@ -1,23 +1,27 @@
 <html>
     <head>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <script>function use(url) { window.external.Import(url); }</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <script>
+            function use(url) { window.external.Import(url); }
+        </script>
         <style>
-            button {
-                transition: 1s;
-            }
-
-            button:hover {
-                background-color: red;
+            .foo {
+                -app-display: flex;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 300px;
+                border: 1px solid red;
             }
         </style>
     </head>
     <body>
         <!--Application Imports-->
         <script>
+            use("modules/libraries/flexibility.js");
             use("modules/libraries/environment-setup.js");
             use("modules/libraries/bluebird.min.js");
-            use("modules/libraries/flexie.js");
             use("modules/polyfills/polyfills-string.js");
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
@@ -33,19 +37,12 @@
         <button id="test">
             Other Button for Interaction
         </button>
+        <div class="foo">sas</div>
+
+        <!--Final important declarations-->
         <script>
-            
-            function pick() {
-                fetch('https://jsonplaceholder.typicode.com/posts/1', {
-                    method: "PUT",
-                    body: {}
-                }).and(function(x) {
-                    var target = document.querySelector("#test");
-                    global.addEventListener(target, "onclick", function(){alert(x)});
-                });
-            }
+            flexibility(document.documentElement);
         </script>
-        
     </body>
 
 </html>
