@@ -41,6 +41,7 @@ namespace Htapps
             this.browserScreen.Size = new System.Drawing.Size(800, 450);
             this.browserScreen.TabIndex = 0;
             this.browserScreen.Url = new System.Uri("", System.UriKind.Relative);
+            this.browserScreen.WebBrowserShortcutsEnabled = false;
             // 
             // MainScreen
             // 
