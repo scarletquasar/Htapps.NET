@@ -1,3 +1,12 @@
+### Todo List
+
+**`Functions to change the title and icon of the application at runtime from JavaScript`**<br>
+**`Animations (keyframe adapters using transitions)`**<br>
+**`Display Grid support`**<br>
+**`localStorage support`**<br>
+**`cookies support`**<br>
+**`devtools adapter`**<br>
+
 ### List of adapted features (which don't or can't have polyfill yet)
 
 **GLOBAL** <br>
