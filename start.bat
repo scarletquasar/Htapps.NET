@@ -1,1 +1,1 @@
-start ./bin/Debug/Htapps.exe
+start ./debugRelease/Htapps.exe
