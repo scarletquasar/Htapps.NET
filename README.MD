@@ -7,9 +7,12 @@
 **`global.addEventListener devlopment` [In Progress]**<br>
 **`cookies support`**<br>
 **`devtools adapter` [In Progress]**<br>
-**`screen resizer`**<br>
 **`responsivity trigger`**<br>
 **`EcmaScript arrow functions`**<br>
+
+### Done List
+
+**`screen resizer`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
 
