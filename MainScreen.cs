@@ -40,6 +40,11 @@ namespace Htapps
             this.Size = new Size(x, y);
         }
 
+        public void SetTitle(string new_title)
+        {
+            this.Text = new_title;
+        }
+
         //Web Fetch Functions
         public async Task<string> WebFetch(string target, string method, string content_type, string headers, string body, string callback)
         {

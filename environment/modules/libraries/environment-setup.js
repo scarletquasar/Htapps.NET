@@ -40,3 +40,10 @@ window.resizeScreen = function(x, y) {
     if(typeof y != "number") y = 0;
     window.external.ResizeScreen(x, y);
 }
+
+window.setTitle = function(title) {
+    if(!title) title = "";
+    window.external.SetTitle(title);
+}
+
+window.setTitle(document.title);
