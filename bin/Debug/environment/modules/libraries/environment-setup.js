@@ -1,5 +1,6 @@
 var bindGlobals = {};
 var global = {
+    bodyCache: "",
     config: {
         time: {
             usePromises: false

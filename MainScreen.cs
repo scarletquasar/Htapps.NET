@@ -21,7 +21,7 @@ namespace Htapps
         public void Import(string url)
         {
             HtmlDocument doc = browserScreen.Document;
-            HtmlElement body = doc.GetElementsByTagName("body")[0];
+            HtmlElement body = doc.GetElementsByTagName("head")[0];
             HtmlElement s = doc.CreateElement("script");
             s.SetAttribute("text", File.ReadAllText("./environment/" + url));
             body.AppendChild(s);
