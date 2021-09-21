@@ -23,5 +23,4 @@ console = {
 
 window.onerror = function(e) {
     console.error(e);
-    e.preventDefault();
 };
