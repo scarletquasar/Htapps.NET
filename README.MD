@@ -6,7 +6,7 @@
 **`localStorage support`**<br>
 **`global.addEventListener devlopment` [In Progress]**<br>
 **`cookies support`**<br>
-**`devtools adapter`** [In Progress]<br>
+**`devtools adapter` [In Progress]**<br>
 **`screen resizer`**<br>
 **`responsivity trigger`**<br>
 
