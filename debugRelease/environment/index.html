@@ -46,17 +46,15 @@
             </div>
         </div>
 
-        <script>
-            alert(xex)
-        </script>
-
-
         <!--Final important declarations-->
         <script>
             //Initialize Flexbox Support
             flexibility(document.documentElement);
 
-            //Reload content once to prevent diverse features not initializing.
+            /*
+                Reload content once to prevent diverse features not initializing. 
+                (https://github.com/EternalQuasar0206/htapps/issues/1)
+            */
             if(sessionStorage && !sessionStorage.getItem("$one-time-reload-pattern")) {
                 sessionStorage.setItem("$one-time-reload-pattern", "true");
                 location.reload();
