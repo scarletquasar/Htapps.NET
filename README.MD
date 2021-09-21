@@ -4,6 +4,7 @@
 **`Animations (keyframe adapters using transitions)`**<br>
 **`Display Grid support`**<br>
 **`localStorage support`**<br>
+**`global.addEventListener devlopment`**<br>
 **`cookies support`**<br>
 **`devtools adapter`**<br>
 
