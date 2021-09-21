@@ -32,6 +32,7 @@ namespace Htapps
             MessageBox.Show(text, message);
         }
 
+        //Web Fetch Functions
         public async Task<string> WebFetch(string target, string method, string content_type, string headers, string body, string callback)
         {
             string result = string.Empty;
@@ -82,6 +83,24 @@ namespace Htapps
             head.AppendChild(s);
 
             return result;
+        }
+    
+        //Storage Functions
+        public void SessionStorageStore(string key, string value)
+        {
+            GlobalStorage.Dictionary[key] = value;
+        }
+
+        public string SessionStorageGet(string key)
+        {
+            if(GlobalStorage.Dictionary.ContainsKey(key))
+            {
+                return GlobalStorage.Dictionary[key];
+            }
+            else
+            {
+                return "empty";
+            }
         }
     }
 }

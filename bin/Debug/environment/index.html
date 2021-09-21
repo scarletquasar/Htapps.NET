@@ -19,29 +19,42 @@
     <body>
         <!--Application Imports-->
         <script>
+            // Adaptation for sessionStorage
+            use("modules/adapters/adapters-storage.js");
+            // Modern features libraries
             use("modules/libraries/flexibility.js");
-            use("modules/libraries/environment-setup.js");
             use("modules/libraries/bluebird.min.js");
+            //Setup Application Environment
+            use("modules/libraries/environment-setup.js");
+            //Polyfills
             use("modules/polyfills/polyfills-string.js");
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
             use("modules/polyfills/polyfills-document.js");
             use("modules/polyfills/polyfills-Object.js");
+            //Misc Adapters
             use("modules/adapters/adapters-sleep.js");
             use("modules/adapters/adapters-async.js");
             use("modules/adapters/adapters-webfetch.js");
             use("modules/adapters/adapters-eventListener.js");
         </script>
 
-        <button onClick="pick()">Pick Info</button>
-        <button id="test">
-            Other Button for Interaction
-        </button>
-        <div class="foo">sas</div>
+        <div id="root">
+            <div style="-app-display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center;">
+                Flexbox Test
+            </div>
+        </div>
 
         <!--Final important declarations-->
         <script>
+            //Initialize Flexbox Support
             flexibility(document.documentElement);
+
+            //Reload content once to prevent diverse features not initializing.
+            if(sessionStorage && !sessionStorage.getItem("$one-time-reload-pattern")) {
+                sessionStorage.setItem("$one-time-reload-pattern", "true");
+                location.reload();
+            }
         </script>
     </body>
 
