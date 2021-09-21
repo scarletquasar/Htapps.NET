@@ -34,6 +34,10 @@
 
 **`sleepFor(time)`** Delay the thread (application) for a while.
 
+**FLEXBOX (css)** <br>
+
+**`-appkit-display: flex`** To enable the flexbox mode.
+
 ### Libraries:
 
 https://github.com/jonathantneal/flexibility - Flexbox Support<br>
