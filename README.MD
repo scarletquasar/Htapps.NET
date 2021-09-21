@@ -21,3 +21,8 @@
 
 **`sleepFor(time)`** Delay the thread (application) for a while.
 
+### Libraries:
+
+https://github.com/doctyper/flexie
+https://github.com/petkaantonov/bluebird/
+
