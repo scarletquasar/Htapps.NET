@@ -1,0 +1,8 @@
+body, html {
+    height: 99%;
+    overflow-y: hidden;
+    font-family: 'Verdana';
+}
+#root {
+    height: 99%;
+}

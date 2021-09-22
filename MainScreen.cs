@@ -16,7 +16,8 @@ namespace Htapps
         {
             InitializeComponent();
             browserScreen.ObjectForScripting = this;
-            browserScreen.Document.Write(File.ReadAllText("./environment/index.html"));
+            browserScreen.Document.Write(File.ReadAllText("./environment/index.html")
+            .Replace("{app}", File.ReadAllText("./environment/app.html")));
         }
 
         //Environment Functions
@@ -27,6 +28,16 @@ namespace Htapps
             HtmlElement s = doc.CreateElement("script");
             s.SetAttribute("text", File.ReadAllText("./environment/" + url));
             body.AppendChild(s);
+        }
+
+        public void ImportStyle(string url)
+        {
+            HtmlDocument doc = browserScreen.Document;
+            HtmlElement head = doc.GetElementsByTagName("head")[0];
+            HtmlElement s = doc.CreateElement("script");
+            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "");
+            s.SetAttribute("text", $"___appendStyle(\"{content}\")");
+            head.AppendChild(s);
         }
 
         public void Alert(string text, string message)
