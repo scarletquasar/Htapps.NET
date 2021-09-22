@@ -12,7 +12,11 @@ var global = {
     config: {
         time: {
             usePromises: false
+        },
+        featureSupport: {
+            enableJQuery: true
         }
+
     }
 }
 

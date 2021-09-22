@@ -6,8 +6,7 @@ function ___appendStyle(css) {
 
     style.type = 'text/css';
     if (style.styleSheet){
-
-    style.styleSheet.cssText = css;
+        style.styleSheet.cssText = css;
     } else {
         style.appendChild(document.createTextNode(css));
     }

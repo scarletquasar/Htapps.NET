@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />      
         <script>
             function use(url) { 
                 window.external.Import(url); 
@@ -15,13 +16,18 @@
     <body>
         <!--Application Imports-->
         <script>
+            //Setup Application Environment
+            use("modules/libraries/environment-setup.js");
             // Adaptation for sessionStorage
             use("modules/adapters/adapters-storage.js");
             // Modern features libraries
             use("modules/libraries/flexibility.js");
             use("modules/libraries/bluebird.min.js");
-            //Setup Application Environment
-            use("modules/libraries/environment-setup.js");
+            //Natively use JQuery to promote feature support
+            if (global.config.featureSupport.enableJQuery) {
+                use("modules/libraries/jquery/jquery.js");
+                use("modules/libraries/jquery/jquery-corner.js");
+            } 
             //Polyfills
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
@@ -37,8 +43,6 @@
             use("modules/adapters/adapters-eventListener.js");
             use("modules/adapters/adapters-style.js");
             useStyle("css/htapps_predef.css");
-            //Others
-            use("modules/libraries/require.js");
         </script>
         <div id="root">
             {app}
