@@ -86,3 +86,16 @@ if(!Object.values) {
     });
   };
 }
+
+if (!Object.is) {
+  Object.is = function(x, y) {
+    // Algoritmo para verificar se os valores sao iguais
+    if (x === y) { // Passos 1-5, 7-10
+      // Passos 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Passo 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  };
+}
