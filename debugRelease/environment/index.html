@@ -3,14 +3,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <script>function use(url) { window.external.Import(url); }</script>
         <title>TestApp</title>
-        <style>
-            button {
-                transition: 1s;
-            }
-            button:hover {
-                transform: scale(1.5);
-            }
-        </style>
     </head>
     <body>
         <!--Application Imports-->
@@ -34,8 +26,6 @@
             use("modules/adapters/adapters-async.js");
             use("modules/adapters/adapters-webfetch.js");
             use("modules/adapters/adapters-eventListener.js");
-            //Babel
-            use("modules/libraries/babel.min.js");
         </script>
 
         <div id="root">
@@ -43,8 +33,7 @@
 
         <!--Final important declarations-->
         <script>
-            const blo = "a";
-            alert(blo);
+            alert(Object.values({a: 1, b: 2}).toString());
         </script>
         <script>
             //Initialize Flexbox Support

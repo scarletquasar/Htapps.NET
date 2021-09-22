@@ -4,6 +4,6 @@ var sessionStorage = {
     },
 
     getItem: function(key) {
-        window.external.SessionStorageGet(key);
+        return window.external.SessionStorageGet(key) || null;
     }
 }
