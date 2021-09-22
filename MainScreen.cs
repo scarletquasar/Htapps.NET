@@ -6,18 +6,22 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Drawing;
+using System;
 
 namespace Htapps
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class MainScreen : Form
     {
+        string AppPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/")
+        .Remove(AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/").Length - 1) + "/environment/";
         public MainScreen()
         {
             InitializeComponent();
             browserScreen.ObjectForScripting = this;
             browserScreen.Document.Write(File.ReadAllText("./environment/index.html")
-            .Replace("{app}", File.ReadAllText("./environment/app.html")));
+            .Replace("{app}", File.ReadAllText("./environment/app.html"))
+            .Replace("{appPath}", AppPath));
         }
 
         //Environment Functions

@@ -35,7 +35,6 @@ namespace Htapps
             // browserScreen
             // 
             this.browserScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.browserScreen.IsWebBrowserContextMenuEnabled = false;
             this.browserScreen.Location = new System.Drawing.Point(0, 0);
             this.browserScreen.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserScreen.Name = "browserScreen";
