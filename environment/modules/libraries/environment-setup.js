@@ -47,3 +47,11 @@ window.setTitle = function(title) {
 }
 
 window.setTitle(document.title);
+
+window.alert = function(message, title) {
+    if(!message) message = " ";
+    if(!title) title = " ";
+    if(sessionStorage.getItem("$one-time-reload-pattern")) {
+        window.external.Alert(message, title);
+    }
+}

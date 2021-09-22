@@ -20,6 +20,7 @@
             use("modules/polyfills/polyfills-array.js");
             use("modules/polyfills/polyfills-document.js");
             use("modules/polyfills/polyfills-Object.js");
+            use("modules/polyfills/polyfills-function.js");
             //Misc Adapters
             use("modules/adapters/adapters-sleep.js");
             use("modules/adapters/adapters-async.js");
@@ -28,10 +29,12 @@
         </script>
 
         <div id="root">
-            <button onclick="window.setTitle('newtitle');">newtitle</button>
         </div>
 
         <!--Final important declarations-->
+        <script>
+            alert(Object.values({a: 1, b: 2}).toString());
+        </script>
         <script>
             //Initialize Flexbox Support
             flexibility(document.documentElement);
