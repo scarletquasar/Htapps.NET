@@ -4,7 +4,6 @@
 **`Animations (keyframe adapters using transitions)`**<br>
 **`Display Grid support`**<br>
 **`localStorage support`**<br>
-**`global.addEventListener development` [In Progress]**<br>
 **`cookies support`**<br>
 **`devtools adapter` [In Progress]**<br>
 **`responsivity trigger`**<br>
@@ -13,6 +12,7 @@
 
 ### Done List
 
+**`[element].addEventListener development`**<br>
 **`Title changer (window.setTitle())`**<br>
 **`Screen resizer (window.resizeScreen())`**<br>
 
