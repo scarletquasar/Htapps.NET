@@ -35,9 +35,11 @@ namespace Htapps
             // browserScreen
             // 
             this.browserScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.browserScreen.IsWebBrowserContextMenuEnabled = false;
             this.browserScreen.Location = new System.Drawing.Point(0, 0);
             this.browserScreen.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserScreen.Name = "browserScreen";
+            this.browserScreen.ScriptErrorsSuppressed = true;
             this.browserScreen.Size = new System.Drawing.Size(800, 450);
             this.browserScreen.TabIndex = 0;
             this.browserScreen.Url = new System.Uri("", System.UriKind.Relative);
