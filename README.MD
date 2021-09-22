@@ -13,7 +13,8 @@
 
 ### Done List
 
-**`screen resizer`**<br>
+**`Title changer (window.setTitle())`**<br>
+**`Screen resizer (window.resizeScreen())`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
 
