@@ -23,11 +23,6 @@
             // Modern features libraries
             use("modules/libraries/flexibility.js");
             use("modules/libraries/bluebird.min.js");
-            //Natively use JQuery to promote feature support
-            if (global.config.featureSupport.enableJQuery) {
-                use("modules/libraries/jquery/jquery.js");
-                use("modules/libraries/jquery/jquery-corner.js");
-            } 
             //Polyfills
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
