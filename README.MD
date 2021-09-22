@@ -41,7 +41,8 @@
 
 **FLEXBOX (css)** <br>
 
-**`-appkit-display: flex`** To enable the flexbox mode.
+**`display: flex`** To enable the flexbox mode in external styles.
+**`-appkit-display: flex`** To enable the flexbox mode in inline <style> tags.
 
 ### Libraries:
 
