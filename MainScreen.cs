@@ -35,7 +35,9 @@ namespace Htapps
             HtmlDocument doc = browserScreen.Document;
             HtmlElement head = doc.GetElementsByTagName("head")[0];
             HtmlElement s = doc.CreateElement("script");
-            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "");
+            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "")
+            //Turn "display" into "-appkit-display" from external files to promote convenience
+            .Replace("display", "-appkit-display");
             s.SetAttribute("text", $"___appendStyle(\"{content}\")");
             head.AppendChild(s);
         }
