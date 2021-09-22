@@ -11,12 +11,3 @@ function ___appendStyle(css) {
         style.appendChild(document.createTextNode(css));
     }
 }
-
-var ElementStyle = function(target) {
-    return {
-        linearGradient: function(start, end) {
-            document.querySelector(target).style.background 
-            = 'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='+start+', endColorstr='+end+',GradientType=0 );';
-        }
-    }
-}
