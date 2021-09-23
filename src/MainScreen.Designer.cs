@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Htapps
 {
     partial class MainScreen
@@ -34,12 +36,11 @@ namespace Htapps
             // 
             // browserScreen
             // 
-            this.browserScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.browserScreen.IsWebBrowserContextMenuEnabled = false;
             this.browserScreen.Location = new System.Drawing.Point(0, 0);
             this.browserScreen.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserScreen.Name = "browserScreen";
-            this.browserScreen.Size = new System.Drawing.Size(800, 450);
+            this.browserScreen.Size = new System.Drawing.Size(20, 20);
             this.browserScreen.TabIndex = 0;
             this.browserScreen.Url = new System.Uri("", System.UriKind.Relative);
             this.browserScreen.WebBrowserShortcutsEnabled = false;
@@ -48,12 +49,13 @@ namespace Htapps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.browserScreen);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.SizeChanged += new System.EventHandler(this.MainScreen_Resize);
             this.ResumeLayout(false);
-
         }
 
         #endregion
