@@ -15,7 +15,7 @@ namespace Htapps
     {
         string AppPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/")
         .Remove(AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/").Length - 1) + "/environment/";
-        
+
         public MainScreen()
         {
             InitializeComponent();
@@ -28,6 +28,12 @@ namespace Htapps
         private void MainScreen_Resize(object sender, EventArgs e)
         {
             browserScreen.Size = this.Size;
+            browserScreen.Dock = DockStyle.Fill;
+            HtmlDocument doc = browserScreen.Document;
+            HtmlElement head = doc.GetElementsByTagName("head")[0];
+            HtmlElement s = doc.CreateElement("script");
+            s.SetAttribute("text", "flexibility(document.documentElement)");
+            head.AppendChild(s);
         }
 
         //Environment Functions
@@ -144,6 +150,11 @@ namespace Htapps
             {
                 return "empty";
             }
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
