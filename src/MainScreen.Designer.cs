@@ -55,7 +55,6 @@ namespace Htapps
             this.Controls.Add(this.browserScreen);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
-            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.SizeChanged += new System.EventHandler(this.MainScreen_Resize);
             this.ResumeLayout(false);
 

@@ -151,11 +151,6 @@ namespace Htapps
                 return "empty";
             }
         }
-
-        private void MainScreen_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
