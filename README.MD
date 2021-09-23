@@ -5,15 +5,7 @@
 **`Display Grid support`**<br>
 **`localStorage support`**<br>
 **`cookies support`**<br>
-**`devtools adapter` [In Progress]**<br>
-**`responsivity trigger`**<br>
 **`Adapt fetch to promise mode (currently callback)`**<br>
-
-### Done List
-
-**`[element].addEventListener development`**<br>
-**`Title changer (window.setTitle())`**<br>
-**`Screen resizer (window.resizeScreen())`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
 
