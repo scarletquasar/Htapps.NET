@@ -36,6 +36,10 @@ window.alert = function(message, title) {
     }
 }
 
+window.responsivityTrigger = function() {
+    window.external.ResponsiveTrigger();
+}
+
 //console contains all available functionality related to using the development tools console.
 window.console = {
     output: [],

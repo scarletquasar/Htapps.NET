@@ -40,6 +40,7 @@ namespace Htapps
             this.browserScreen.Location = new System.Drawing.Point(0, 0);
             this.browserScreen.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserScreen.Name = "browserScreen";
+            this.browserScreen.ScriptErrorsSuppressed = true;
             this.browserScreen.Size = new System.Drawing.Size(20, 20);
             this.browserScreen.TabIndex = 0;
             this.browserScreen.Url = new System.Uri("", System.UriKind.Relative);
@@ -56,6 +57,7 @@ namespace Htapps
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.SizeChanged += new System.EventHandler(this.MainScreen_Resize);
             this.ResumeLayout(false);
+
         }
 
         #endregion
