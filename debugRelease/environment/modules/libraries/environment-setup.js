@@ -4,32 +4,6 @@
 */
 var bindGlobals = {};
 
-/*
-    global is the object of global application settings, it contains settings and other possible 
-    conveniences.
-*/
-var global = {
-    config: {
-        time: {
-            usePromises: false
-        }
-    }
-}
-
-//console contains all available functionality related to using the development tools console.
-console = {
-    output: [],
-    log: function() {
-        var args = Array.from(arguments).toString();
-        console.output.push(args);
-    },
-
-    error: function() {
-        var args = Array.from(arguments).toString();
-        console.output.push("[X] Error: " + args);
-    },
-};
-
 //Setup of important window features for the application's operation.
 window.onerror = function(e) {
     console.error(e);
@@ -55,3 +29,17 @@ window.alert = function(message, title) {
         window.external.Alert(message, title);
     }
 }
+
+//console contains all available functionality related to using the development tools console.
+window.console = {
+    output: [],
+    log: function() {
+        var args = Array.from(arguments).toString();
+        console.output.push(args);
+    },
+
+    error: function() {
+        var args = Array.from(arguments).toString();
+        console.output.push("[X] Error: " + args);
+    },
+};
