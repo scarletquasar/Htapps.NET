@@ -20,6 +20,12 @@ window.setTitle = function(title) {
     window.external.SetTitle(title);
 }
 
+window.setIcon = function(icon) {
+    if(!icon) return;
+    window.external.SetIcon(icon);
+}
+
+window.setIcon("./environment/favicon.ico");
 window.setTitle(document.title);
 
 window.alert = function(message, title) {

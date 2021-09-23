@@ -25,6 +25,13 @@ namespace Htapps
         }
 
         //Environment Functions
+
+        public void SetIcon(string url)
+        {
+            Icon icon = Icon.ExtractAssociatedIcon(url);
+            this.Icon = icon;
+        }
+
         public void Import(string url)
         {
             HtmlDocument doc = browserScreen.Document;
