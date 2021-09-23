@@ -1,24 +1,19 @@
 if (!Function.prototype.bind) {
-    Function.prototype.bind = function(oThis) {
+  Function.prototype.bind = function (o) {
       if (typeof this !== 'function') {
-        // mais próximo possível da função interna
-        // IsCallable da ECMAScript 5
-        throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+          throw TypeError("Bind must be called on a function");
       }
-  
-      var aArgs   = Array.prototype.slice.call(arguments, 1),
-          fToBind = this,
-          fNOP    = function() {},
-          fBound  = function() {
-            return fToBind.apply(this instanceof fNOP
-                   ? this
-                   : oThis,
-                   aArgs.concat(Array.prototype.slice.call(arguments)));
+      var slice = [].slice,
+          args = slice.call(arguments, 1),
+          self = this,
+          bound = function () {
+              return self.apply(this instanceof nop ? this : o,
+                  args.concat(slice.call(arguments)));
           };
-  
-      fNOP.prototype = this.prototype;
-      fBound.prototype = new fNOP();
-  
-      return fBound;
-    };
-  }
+
+      function nop() {}
+      nop.prototype = self.prototype;
+      bound.prototype = new nop();
+      return bound;
+  };
+}

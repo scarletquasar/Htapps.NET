@@ -1,3 +1,12 @@
+if (!Object.getPrototypeOf) {
+  Object.getPrototypeOf = function (o) {
+      if (o !== Object(o)) {
+          throw TypeError("Object.getPrototypeOf called on non-object");
+      }
+      return o.__proto__ || o.constructor.prototype || Object.prototype;
+  };
+}
+
 if (!Object.keys) {
     Object.keys = (function() {
       'use strict';
@@ -100,90 +109,97 @@ if (!Object.is) {
   };
 }
 
-Object.getOwnPropertyDescriptor = function(object, key) {
-  
-  var hasSupport =
-    typeof object.__lookupGetter__ === 'function' &&
-    typeof object.__lookupSetter__ === 'function'
-  
-  // TODO: How does one determine this?!
-  var isGetterSetter = !hasSupport ? null :
-    object.__lookupGetter__( key ) ||
-    object.__lookupSetter__( key )
-  
-  return isGetterSetter != null ? {
-    configurable: true,
-    enumerable: true,
-    get: object.__lookupGetter__( key ),
-    set: object.__lookupSetter__( key )
-  } : {
-    configurable: true,
-    writable: true,
-    enumerable: true,
-    value: object[ key ]
+if(Object.getOwnPropertyDescriptor) {
+  Object.getOwnPropertyDescriptor = function(object, key) {
+    
+    var hasSupport =
+      typeof object.__lookupGetter__ === 'function' &&
+      typeof object.__lookupSetter__ === 'function'
+    
+    // TODO: How does one determine this?!
+    var isGetterSetter = !hasSupport ? null :
+      object.__lookupGetter__( key ) ||
+      object.__lookupSetter__( key )
+    
+    return isGetterSetter != null ? {
+      configurable: true,
+      enumerable: true,
+      get: object.__lookupGetter__( key ),
+      set: object.__lookupSetter__( key )
+    } : {
+      configurable: true,
+      writable: true,
+      enumerable: true,
+      value: object[ key ]
+    }
   }
-  
 }
 
-if(!Object.defineProperties) {
-  Object.defineProperties = function(obj, properties) {
-    function convertToDescriptor(desc) {
-      function hasProperty(obj, prop) {
-        return Object.prototype.hasOwnProperty.call(obj, prop);
+if (typeof Object.getOwnPropertyNames !== "function") {
+  Object.getOwnPropertyNames = function (o) {
+      if (o !== Object(o)) {
+          throw TypeError("Object.getOwnPropertyNames called on non-object");
       }
-  
-      function isCallable(v) {
-        // NB: modify as necessary if other values than functions are callable.
-        return typeof v === 'function';
+      var props = [],
+          p;
+      for (p in o) {
+          if (Object.prototype.hasOwnProperty.call(o, p)) {
+              props.push(p);
+          }
       }
-  
-      if (typeof desc !== 'object' || desc === null)
-        throw new TypeError('bad desc');
-  
-      var d = {};
-  
-      if (hasProperty(desc, 'enumerable'))
-        d.enumerable = !!desc.enumerable;
-      if (hasProperty(desc, 'configurable'))
-        d.configurable = !!desc.configurable;
-      if (hasProperty(desc, 'value'))
-        d.value = desc.value;
-      if (hasProperty(desc, 'writable'))
-        d.writable = !!desc.writable;
-      if (hasProperty(desc, 'get')) {
-        var g = desc.get;
-  
-        if (!isCallable(g) && typeof g !== 'undefined')
-          throw new TypeError('bad get');
-        d.get = g;
-      }
-      if (hasProperty(desc, 'set')) {
-        var s = desc.set;
-        if (!isCallable(s) && typeof s !== 'undefined')
-          throw new TypeError('bad set');
-        d.set = s;
-      }
-  
-      if (('get' in d || 'set' in d) && ('value' in d || 'writable' in d))
-        throw new TypeError('identity-confused descriptor');
-  
-      return d;
-    }
-  
-    if (typeof obj !== 'object' || obj === null)
-      throw new TypeError('bad obj');
-  
-    properties = Object(properties);
-  
-    var keys = Object.keys(properties);
-    var descs = [];
-  
-    for (var i = 0; i < keys.length; i++)
-      descs.push([keys[i], convertToDescriptor(properties[keys[i]])]);
-  
-    for (var i = 0; i < descs.length; i++)
-      Object.defineProperty(obj, descs[i][0], descs[i][1]);
-  
-    return obj;
+      return props;
+  };
+}
+
+(function () {
+  if (!Object.defineProperty ||
+      !(function () {
+          try {
+              Object.defineProperty({}, 'x', {});
+              return true;
+          }
+          catch (e) {
+              return false;
+          }
+      }())) {
+      var orig = Object.defineProperty;
+      Object.defineProperty = function (o, prop, desc) {
+          // In IE8 try built-in implementation for defining properties on DOM prototypes.
+          if (orig) {
+              try {
+                  return orig(o, prop, desc);
+              }
+              catch (e) {}
+          }
+
+          if (o !== Object(o)) {
+              throw TypeError("Object.defineProperty called on non-object");
+          }
+          if (Object.prototype.__defineGetter__ && ('get' in desc)) {
+              Object.prototype.__defineGetter__.call(o, prop, desc.get);
+          }
+          if (Object.prototype.__defineSetter__ && ('set' in desc)) {
+              Object.prototype.__defineSetter__.call(o, prop, desc.set);
+          }
+          if ('value' in desc) {
+              o[prop] = desc.value;
+          }
+          return o;
+      };
   }
+}());
+
+if (typeof Object.defineProperties !== "function") {
+  Object.defineProperties = function (o, properties) {
+      if (o !== Object(o)) {
+          throw TypeError("Object.defineProperties called on non-object");
+      }
+      var name;
+      for (name in properties) {
+          if (Object.prototype.hasOwnProperty.call(properties, name)) {
+              Object.defineProperty(o, name, properties[name]);
+          }
+      }
+      return o;
+  };
 }

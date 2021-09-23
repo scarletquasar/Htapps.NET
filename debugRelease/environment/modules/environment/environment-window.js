@@ -1,9 +1,3 @@
-/*
-    bindGlobals - bindGlobals is a way of storing temporary data that needs a unique naming, 
-    it is usually used by built-in asynchronous operators.
-*/
-var bindGlobals = {};
-
 //Setup of important window features for the application's operation.
 window.onerror = function(e) {
     console.error(e);

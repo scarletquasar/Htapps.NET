@@ -16,10 +16,6 @@
     <body>
         <!--Application Imports-->
         <script>
-            //Setup Application Environment
-            use("modules/libraries/environment-setup.js");
-            // Adaptation for sessionStorage
-            use("modules/adapters/adapters-storage.js");
             // Modern features libraries
             use("modules/libraries/flexibility.js");
             use("modules/libraries/bluebird.min.js");
@@ -27,16 +23,20 @@
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
             use("modules/polyfills/polyfills-document.js");
-            use("modules/polyfills/polyfills-Object.js");
+            use("modules/polyfills/polyfills-object.js");
             use("modules/polyfills/polyfills-function.js");
             use("modules/polyfills/polyfills-string.js");
-            use("modules/polyfills/polyfills-misc.js");
+            use("modules/polyfills/polyfills-date.js");
             //Misc Adapters
             use("modules/adapters/adapters-sleep.js");
             use("modules/adapters/adapters-async.js");
             use("modules/adapters/adapters-webfetch.js");
             use("modules/adapters/adapters-eventListener.js");
             use("modules/adapters/adapters-style.js");
+            use("modules/adapters/adapters-storage.js");
+            //Environment Setup
+            use("modules/environment/environment-window.js");
+            use("modules/environment/environment-globals.js");
             useStyle("css/htapps_predef.css");
         </script>
         <div id="root">
