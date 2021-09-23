@@ -3,7 +3,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
         body { 
             font-family: 'Roboto';
-            
             width: 50%;
         }
     </style>
@@ -28,25 +27,36 @@
         <hr>
         <h2>API de Scripting - window</h2>
 
-        <h3>● window.resizeScreen(x, y)</h3>
+        <h3>(f) ● window.resizeScreen(x, y)</h3>
         <h4>
             Altera o tamanho atual da tela não maximizada.
         </h4>
 
-        <h3>● window.setTitle(title?)</h3>
+        <h3>(f) ● window.setTitle(title?)</h3>
         <h4>
             Altera o título atual exibido na aplicação.
         </h4>
 
-        <h3>● window.alert(text, title?)</h3>
+        <h3>(f) ● window.alert(text, title?)</h3>
         <h4>
             Altera o título atual exibido na aplicação.
         </h4>
 
-        <h3>● window.console.[log/error](text)</h3>
+        <h3>(f) ● window.console.[log/error](text)</h3>
         <h4>
             Dispara um log ou um erro no console.
         </h4>
 
+        <h3>(array) ● window.console.output</h3>
+        <h4>
+            Output final do console.
+        </h4>
+
+        <h3>(object) ● window.sessionStorage</h3>
+        <h4>
+            Fornece opções para o gerenciamento do sessionStorage na aplicação. <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/sessionStorage">Documentação Ofical</a><br>
+            
+            Obs: Não apresenta suporte a operações diretas, necessário [set/get]Item().
+        </h4>
     </body>
 </html>

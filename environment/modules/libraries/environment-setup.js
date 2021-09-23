@@ -4,18 +4,6 @@
 */
 var bindGlobals = {};
 
-/*
-    global is the object of global application settings, it contains settings and other possible 
-    conveniences.
-*/
-var global = {
-    config: {
-        time: {
-            usePromises: false
-        }
-    }
-}
-
 //Setup of important window features for the application's operation.
 window.onerror = function(e) {
     console.error(e);

@@ -1,0 +1,62 @@
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Roboto';
+            width: 50%;
+        }
+    </style>
+    <body>
+        <h1>Htapps Documentation</h1>
+        <h3>
+            Htapps is a development environment built in C# and JavaScript that allows you to build applications
+            Windows desktop with built-in functionality that allows greater freedom for multiple purposes.
+            <br><br>
+            Note: This documentation is pending update and currently serves to encompass current functionalities
+            from the project.
+        </h3>
+        <hr>
+        <h2>1. Use</h2>
+        <h3>
+            Currently Htapps is in the development phase, which means that it doesn't have a tool yet.
+            command line to generate new projects. To create a new project, just use the folder as a base.
+            "debugRelease" from the official repository. To start developing the application, just edit the file content
+            "app.html", it is not recommended to mess with the "index.html" as it contains code necessary for the correct execution of the
+            application.
+        </h3>
+        <hr>
+        <h2>Scripting API - window</h2>
+
+        <h3>(f) ● window.resizeScreen(x, y)</h3>
+        <h4>
+            Changes the current size of the unmaximized screen.
+        </h4>
+
+        <h3>(f) ● window.setTitle(title?)</h3>
+        <h4>
+            Changes the current title displayed in the application.
+        </h4>
+
+        <h3>(f) ● window.alert(text, title?)</h3>
+        <h4>
+            Changes the current title displayed in the application.
+        </h4>
+
+        <h3>(f) ● window.console.[log/error](text)</h3>
+        <h4>
+            Triggers a log or an error on the console.
+        </h4>
+
+        <h3>(array) ● window.console.output</h3>
+        <h4>
+            Final output from the console.
+        </h4>
+
+        <h3>(object) ● window.sessionStorage</h3>
+        <h4>
+            Provides options for managing sessionStorage in the application. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">Official Documentation</a><br>
+            
+            Note: It does not support direct operations, required [set/get]Item().
+        </h4>
+    </body>
+</html>
