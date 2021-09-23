@@ -1,10 +1,7 @@
 ### Todo List
 
 **`Function to change the icon of the application at runtime from JavaScript`**<br>
-**`Animations (keyframe adapters using transitions)`**<br>
-**`Display Grid support`**<br>
 **`localStorage support`**<br>
-**`cookies support`**<br>
 **`Adapt fetch to promise mode (currently callback)`**<br>
 
 ### List of adapted features (which don't or can't have polyfill yet)
