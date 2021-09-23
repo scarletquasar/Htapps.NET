@@ -7,7 +7,6 @@
 **`cookies support`**<br>
 **`devtools adapter` [In Progress]**<br>
 **`responsivity trigger`**<br>
-**`EcmaScript arrow functions`**<br>
 **`Adapt fetch to promise mode (currently callback)`**<br>
 
 ### Done List
