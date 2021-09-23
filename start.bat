@@ -1,1 +1,2 @@
-start ./debugRelease/Htapps.exe
+cd debugRelease
+start Htapps.exe
