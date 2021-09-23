@@ -2,7 +2,7 @@
 
 **`localStorage support`**<br>
 **`Adapt fetch to promise mode (currently callback)`**<br>
-**`DXImageTransform.Microsoft to modern css features`**<br>
+**`DXImageTransform.Microsoft compiler to modern css features`**<br>
 
 ### Libraries:
 
