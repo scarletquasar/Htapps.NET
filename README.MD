@@ -1,6 +1,5 @@
 ### Todo List
 
-**`Adapt fetch to promise mode (currently callback)`**<br>
 **`JavaScript style adapter library`**<br>
 **`Install keybook.js`**<br>
 **`DXImageTransform.Microsoft compiler to modern css features`**<br>
