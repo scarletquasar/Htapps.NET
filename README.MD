@@ -85,8 +85,8 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>No</td>
   </tr>
 </table>
-
-## Htapps environment functions
+<br>
+<h2>Htapps environment functions</h2>
 
 <table>
   <tr>
@@ -160,3 +160,7 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>Create an error instance in the console</td>
   </tr>
 </table>
+<br>
+<h2>External Libraries</h2>
+https://github.com/jonathantneal/flexibility - Flexbox Support<br>
+https://github.com/petkaantonov/bluebird - Promises Support
