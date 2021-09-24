@@ -11,5 +11,4 @@ function ___checkFor(resultName, action) {
         }
     }, 300);
 }
-
 //TODO: Remake async function with Async external .NET provider
