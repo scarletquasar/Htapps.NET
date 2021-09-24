@@ -3,10 +3,13 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
 using System.Text.Json;
 using System.Drawing;
 using System;
+using Htapps.components.screen;
+using Htapps.components.lifecycle;
+using Htapps.components.webservices;
+using Htapps.components.storage;
 
 namespace Htapps
 {
@@ -36,121 +39,27 @@ namespace Htapps
             head.AppendChild(s);
         }
 
-        //Environment Functions
+        //Screen Functions
+        public void SetIcon(string url) { ScreenManager.SetIcon(url, this); }
+        public void SetTitle(string new_title) { ScreenManager.SetTitle(new_title, this); }
+        public void ResizeScreen(int x, int y) { ScreenManager.ResizeScreen(x, y, this); }
+        public void Alert(string text, string message) { ScreenManager.Alert(text, message); }
 
-        public void SetIcon(string url)
+        //Lifecycle Functions
+
+        public void Import(string url) { LifecycleManager.Import(url, browserScreen); }
+        public void ImportStyle(string url) { LifecycleManager.ImportStyle(url, browserScreen); }
+
+        //Webservices Functions
+        public async Task WebFetch(string t, string m, string c_t, string h, string b, string c) 
         {
-            Icon icon = Icon.ExtractAssociatedIcon(url);
-            this.Icon = icon;
+            await WebManagerAsync.WebFetch(t, m, c_t, h, b, c, browserScreen);
         }
 
-        public void Import(string url)
-        {
-            HtmlDocument doc = browserScreen.Document;
-            HtmlElement body = doc.GetElementsByTagName("head")[0];
-            HtmlElement s = doc.CreateElement("script");
-            s.SetAttribute("text", File.ReadAllText("./environment/" + url));
-            body.AppendChild(s);
-        }
-
-        public void ImportStyle(string url)
-        {
-            HtmlDocument doc = browserScreen.Document;
-            HtmlElement head = doc.GetElementsByTagName("head")[0];
-            HtmlElement s = doc.CreateElement("script");
-            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "")
-            //Turn "display" into "-appkit-display" from external files to promote convenience
-            .Replace("display", "-appkit-display");
-            s.SetAttribute("text", $"___appendStyle(\"{content}\")");
-            head.AppendChild(s);
-        }
-
-        public void Alert(string text, string message)
-        {
-            MessageBox.Show(text, message);
-        }
-
-        public void ResizeScreen(int x, int y)
-        {
-            this.WindowState = FormWindowState.Normal;
-            this.Size = new Size(x, y);
-        }
-
-        public void SetTitle(string new_title)
-        {
-            this.Text = new_title;
-        }
-
-        //Web Fetch Functions
-        public async Task<string> WebFetch(string target, string method, string content_type, string headers, string body, string callback)
-        {
-            string result = string.Empty;
-            await Task.Run(() => {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(target);
-                httpWebRequest.Method = method;
-
-                var Headers = JsonSerializer.Deserialize<Dictionary<string, string>>(headers);
-
-                foreach (var i in Headers.Keys)
-                {
-                    httpWebRequest.Headers[i] = Headers[i];
-                }
-
-                if (method.ToUpperInvariant() != "GET")
-                {
-                    httpWebRequest.ContentType = content_type;
-                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                    {
-                        string json = body;
-
-                        streamWriter.Write(json);
-                    }
-
-                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                    {
-                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
-                        result = javascript;
-                    }
-                }
-                else
-                {
-                    using (HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse())
-                    using (Stream stream = response.GetResponseStream())
-                    using (StreamReader streamReader = new StreamReader(stream))
-                    {
-                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
-                        result = javascript;
-                    }
-                }
-            });
-
-            HtmlDocument doc = browserScreen.Document;
-            HtmlElement head = doc.GetElementsByTagName("head")[0];
-            HtmlElement s = doc.CreateElement("script");
-            s.SetAttribute("text", result);
-            head.AppendChild(s);
-
-            return result;
-        }
-    
         //Storage Functions
-        public void SessionStorageStore(string key, string value)
-        {
-            GlobalStorage.Dictionary[key] = value;
-        }
+        public void SessionStorageStore(string key, string value) { StorageManager.SessionStorageStore(key, value); }
+        public string SessionStorageGet(string key) { return StorageManager.SessionStorageGet(key); }
 
-        public string SessionStorageGet(string key)
-        {
-            if(GlobalStorage.Dictionary.ContainsKey(key))
-            {
-                return GlobalStorage.Dictionary[key];
-            }
-            else
-            {
-                return "empty";
-            }
-        }
     }
 }
 

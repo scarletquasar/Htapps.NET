@@ -164,7 +164,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalStorage.cs" />
+    <Compile Include="components\lifecycle\LifecycleManager.cs" />
+    <Compile Include="components\screen\ScreenManager.cs" />
+    <Compile Include="components\storage\GlobalStorage.cs" />
+    <Compile Include="components\storage\StorageManager.cs" />
+    <Compile Include="components\webservices\WebManagerAsync.cs" />
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,5 +220,6 @@
       <TargetPath>environment\%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

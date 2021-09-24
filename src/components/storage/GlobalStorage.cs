@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Htapps
+namespace Htapps.components.storage
 {
     public static class GlobalStorage
     {

@@ -22,6 +22,16 @@ window.setIcon = function(icon) {
 window.setIcon("./environment/favicon.ico");
 window.setTitle(document.title);
 
+//TODO: window.lockResize function
+window.lockResize = function(bool) {
+    if(bool) {
+
+    }
+    else {
+
+    }
+}
+
 window.alert = function(message, title) {
     if(!message) message = " ";
     if(!title) title = " ";
