@@ -110,6 +110,16 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>Changes the application title</td>
   </tr>
   <tr>
+    <td>window.resizeScreen</td>
+    <td>int: x, int: y</td>
+    <td>Defines if resize is enabled in the application</td>
+  </tr>
+   <tr>
+    <td>window.lockResize</td>
+    <td>bool: lock?</td>
+    <td>Defines if resize is enabled in the application</td>
+  </tr>
+  <tr>
     <td>window.minimizeScreen</td>
     <td>-</td>
     <td>Minimize the application screen</td>
@@ -118,5 +128,15 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>window.maximizeScreen</td>
     <td>-</td>
     <td>Maximize the application screen</td>
+  </tr>
+  <tr>
+    <td>window.lockMaximize</td>
+    <td>bool: lock?</td>
+    <td>Defines if maximize option is enabled in the application</td>
+  </tr>
+  <tr>
+    <td>window.lockMinimize</td>
+    <td>bool: lock?</td>
+    <td>Defines if minimize option is enabled in the application</td>
   </tr>
 </table>
