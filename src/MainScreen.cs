@@ -44,6 +44,10 @@ namespace Htapps
         public void SetTitle(string new_title) { ScreenManager.SetTitle(new_title, this); }
         public void LockResizeScreen() { ScreenManager.LockResizeScreen(this); }
         public void UnlockResizeScreen() { ScreenManager.UnlockResizeScreen(this); }
+        public void LockMaximize() { ScreenManager.LockMaximize(this); }
+        public void UnlockMaximize() { ScreenManager.UnlockMaximize(this); }
+        public void LockMinimize() { ScreenManager.LockMinimize(this); }
+        public void UnlockMinimize() { ScreenManager.UnlockMinimize(this); }
         public void ResizeScreen(int x, int y) { ScreenManager.ResizeScreen(x, y, this); }
         public void Alert(string text, string message) { ScreenManager.Alert(text, message); }
 

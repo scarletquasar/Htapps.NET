@@ -31,6 +31,24 @@ window.lockResize = function(bool) {
     }
 }
 
+window.lockMaximize = function(bool) {
+    if(bool) {
+        window.external.LockMaximize();
+    }
+    else {
+        window.external.UnockMaximize();
+    }
+}
+
+window.lockMinimize = function(bool) {
+    if(bool) {
+        window.external.LockMinimize();
+    }
+    else {
+        window.external.UnockMinimize();
+    }
+}
+
 window.alert = function(message, title) {
     if(!message) message = " ";
     if(!title) title = " ";

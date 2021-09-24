@@ -24,6 +24,22 @@ namespace Htapps.components.screen
         {
             screen.FormBorderStyle = FormBorderStyle.Sizable;
         }
+        public static void LockMaximize(MainScreen screen)
+        {
+            screen.MaximizeBox = false;
+        }
+        public static void UnlockMaximize(MainScreen screen)
+        {
+            screen.MaximizeBox = true;
+        }
+        public static void LockMinimize(MainScreen screen)
+        {
+            screen.MinimizeBox = false;
+        }
+        public static void UnlockMinimize(MainScreen screen)
+        {
+            screen.MinimizeBox = true;
+        }
         public static void SetTitle(string new_title, MainScreen screen)
         {
             screen.Text = new_title;
