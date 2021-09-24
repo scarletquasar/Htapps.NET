@@ -2,9 +2,6 @@
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Net;
-using System.Text.Json;
-using System.Drawing;
 using System;
 using Htapps.components.screen;
 using Htapps.components.lifecycle;
@@ -17,8 +14,6 @@ namespace Htapps
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class MainScreen : Form
     {
-
-
         public MainScreen()
         {
             InitializeComponent();
@@ -53,7 +48,6 @@ namespace Htapps
         public void Alert(string text, string message) { ScreenManager.Alert(text, message); }
 
         //Lifecycle Functions
-
         public void Import(string url) { LifecycleManager.Import(url, browserScreen); }
         public void ImportStyle(string url) { LifecycleManager.ImportStyle(url, browserScreen); }
         public void Exit() { Environment.Exit(0); }
@@ -65,6 +59,8 @@ namespace Htapps
         }
 
         //Storage Functions
+        public void LocalStorageStore(string key, string value) { StorageManager.LocalStorageStore(key, value, browserScreen); }
+        public string LocalStorageGet(string key) { return StorageManager.LocalStorageGet(key, browserScreen); }
         public void SessionStorageStore(string key, string value) { StorageManager.SessionStorageStore(key, value); }
         public string SessionStorageGet(string key) { return StorageManager.SessionStorageGet(key); }
 
