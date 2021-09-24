@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="components\lifecycle\LifecycleManager.cs" />
+    <Compile Include="components\parsers\StyleParser.cs" />
     <Compile Include="components\screen\ScreenManager.cs" />
     <Compile Include="components\storage\GlobalStorage.cs" />
     <Compile Include="components\storage\StorageManager.cs" />
