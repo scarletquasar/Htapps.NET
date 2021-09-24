@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Htapps.components.parsers;
 
 namespace Htapps.components.lifecycle
 {
@@ -23,11 +24,10 @@ namespace Htapps.components.lifecycle
             HtmlDocument doc = browserScreen.Document;
             HtmlElement head = doc.GetElementsByTagName("head")[0];
             HtmlElement s = doc.CreateElement("script");
-            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "")
+            var content = File.ReadAllText("./environment/" + url).Replace(System.Environment.NewLine, "");
+            var parsed_content = StyleParser.Execute(content);
 
-            //Turn "display" into "-appkit-display" from external files to promote convenience
-            .Replace("display", "-appkit-display");
-            s.SetAttribute("text", $"___appendStyle(\"{content}\")");
+            s.SetAttribute("text", $"___appendStyle(\"{parsed_content}\")");
             head.AppendChild(s);
         }
     }
