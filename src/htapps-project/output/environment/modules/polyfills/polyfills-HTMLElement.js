@@ -1,0 +1,3 @@
+if (!HTMLElement) {
+    function HTMLElement() {};
+}

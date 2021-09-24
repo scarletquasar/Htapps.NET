@@ -1,0 +1,1 @@
+xcopy /S /Q /Y /F  ".\src\environment" ".\output\environment\"
