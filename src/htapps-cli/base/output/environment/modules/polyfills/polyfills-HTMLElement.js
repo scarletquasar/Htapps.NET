@@ -1,3 +1,0 @@
-if (!HTMLElement) {
-    function HTMLElement() {};
-}

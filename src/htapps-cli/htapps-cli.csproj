@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net4.7.2</TargetFramework>
-    <RootNamespace>htapps_cli</RootNamespace>
-  </PropertyGroup>
-
-</Project>
