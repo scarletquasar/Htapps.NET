@@ -1,7 +1,3 @@
-### Todo List
-
-**`Install keybook.js`**<br>
-
 ### Libraries:
 
 https://github.com/jonathantneal/flexibility - Flexbox Support<br>
