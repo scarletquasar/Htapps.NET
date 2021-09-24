@@ -14,48 +14,56 @@ namespace Htapps.components.webservices
     {
         public static async Task<string> WebFetch
         (string target, string method, string content_type, string headers, 
-        string body, string callback, WebBrowser browserScreen)
+        string body, string callback, string result, WebBrowser browserScreen)
         {
-            string result = string.Empty;
-            await Task.Run(() => {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(target);
-                httpWebRequest.Method = method;
+            if(result == "")
+            {
+                await Task.Run(() => {
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create(target);
+                    httpWebRequest.Method = method;
 
-                var Headers = JsonSerializer.Deserialize<Dictionary<string, string>>(headers);
+                    var Headers = JsonSerializer.Deserialize<Dictionary<string, string>>(headers);
 
-                foreach (var i in Headers.Keys)
-                {
-                    httpWebRequest.Headers[i] = Headers[i];
-                }
-
-                if (method.ToUpperInvariant() != "GET")
-                {
-                    httpWebRequest.ContentType = content_type;
-                    using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                    foreach (var i in Headers.Keys)
                     {
-                        string json = body;
-
-                        streamWriter.Write(json);
+                        httpWebRequest.Headers[i] = Headers[i];
                     }
 
-                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    if (method.ToUpperInvariant() != "GET")
                     {
-                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
-                        result = javascript;
+                        httpWebRequest.ContentType = content_type;
+                        using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                        {
+                            string json = body;
+
+                            streamWriter.Write(json);
+                        }
+
+                        var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                        using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                        {
+                            string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
+                            result = javascript;
+                        }
                     }
-                }
-                else
-                {
-                    using (HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse())
-                    using (Stream stream = response.GetResponseStream())
-                    using (StreamReader streamReader = new StreamReader(stream))
+                    else
                     {
-                        string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
-                        result = javascript;
+                        using (HttpWebResponse response = (HttpWebResponse)httpWebRequest.GetResponse())
+                        using (Stream stream = response.GetResponseStream())
+                        using (StreamReader streamReader = new StreamReader(stream))
+                        {
+                            string javascript = "(" + callback + ")(JSON.stringify(" + streamReader.ReadToEnd() + "))";
+                            result = javascript;
+                        }
                     }
-                }
-            });
+                });
+            }
+            else
+            {
+                string javascript = "(" + callback + ")(JSON.stringify(" + result + "))";
+                result = javascript;
+            }
+
 
             HtmlDocument doc = browserScreen.Document;
             HtmlElement head = doc.GetElementsByTagName("head")[0];

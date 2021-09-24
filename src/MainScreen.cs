@@ -53,9 +53,9 @@ namespace Htapps
         public void Exit() { Environment.Exit(0); }
 
         //Webservices Functions
-        public async Task WebFetch(string t, string m, string c_t, string h, string b, string c) 
+        public async Task WebFetch(string t, string m, string c_t, string h, string b, string c, string res) 
         {
-            await WebManagerAsync.WebFetch(t, m, c_t, h, b, c, browserScreen);
+            await WebManagerAsync.WebFetch(t, m, c_t, h, b, c, res, browserScreen);
         }
 
         //Storage Functions
