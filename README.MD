@@ -85,3 +85,38 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>No</td>
   </tr>
 </table>
+
+## Htapps environment functions
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Arguments</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>window.close</td>
+    <td>-</td>
+    <td>Finishes the application</td>
+  </tr>
+  <tr>
+    <td>window.setIcon</td>
+    <td>string: path</td>
+    <td>Changes the application icon</td>
+  </tr>
+  <tr>
+    <td>window.setTitle</td>
+    <td>string: title</td>
+    <td>Changes the application title</td>
+  </tr>
+  <tr>
+    <td>window.minimizeScreen</td>
+    <td>-</td>
+    <td>Minimize the application screen</td>
+  </tr>
+  <tr>
+    <td>window.maximizeScreen</td>
+    <td>-</td>
+    <td>Maximize the application screen</td>
+  </tr>
+</table>
