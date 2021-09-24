@@ -16,9 +16,6 @@
     <body>
         <!--Application Imports-->
         <script>
-            // Modern features libraries
-            use("modules/libraries/flexibility.js");
-            //use("modules/libraries/bluebird.min.js");
             //Polyfills
             use("modules/polyfills/polyfills-HTMLElement.js");
             use("modules/polyfills/polyfills-array.js");
@@ -37,6 +34,11 @@
             //Environment Setup
             use("modules/environment/environment-window.js");
             use("modules/environment/environment-globals.js");
+            // Modern features libraries
+            use("modules/libraries/flexibility.js");
+            use("modules/libraries/bluebird.min.js");
+            use("modules/libraries/keybook-htapps.js");
+            // Predef Css
             useStyle("css/htapps_predef.css");
         </script>
         <div id="root">
