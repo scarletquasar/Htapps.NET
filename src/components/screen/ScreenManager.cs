@@ -16,6 +16,14 @@ namespace Htapps.components.screen
             screen.WindowState = FormWindowState.Normal;
             screen.Size = new Size(x, y);
         }
+        public static void LockResizeScreen(MainScreen screen)
+        {
+            screen.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+        public static void UnlockResizeScreen(MainScreen screen)
+        {
+            screen.FormBorderStyle = FormBorderStyle.Sizable;
+        }
         public static void SetTitle(string new_title, MainScreen screen)
         {
             screen.Text = new_title;
