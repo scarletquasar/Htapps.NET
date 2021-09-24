@@ -85,6 +85,3 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>No</td>
   </tr>
 </table>
-<br><br>
-<h2>Built-in Features</h2>
-[Page In Development]
