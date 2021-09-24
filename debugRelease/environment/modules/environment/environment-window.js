@@ -22,13 +22,12 @@ window.setIcon = function(icon) {
 window.setIcon("./environment/favicon.ico");
 window.setTitle(document.title);
 
-//TODO: window.lockResize function
 window.lockResize = function(bool) {
     if(bool) {
-
+        window.external.LockResizeScreen();
     }
     else {
-
+        window.external.UnockResizeScreen();
     }
 }
 
