@@ -26,6 +26,14 @@ window.setIcon = function(icon) {
 window.setIcon("./environment/favicon.ico");
 window.setTitle(document.title);
 
+window.minimizeScreen = function() {
+    window.external.MinimizeScreen();
+}
+
+window.minimizeScreen = function() {
+    window.external.MinimizeScreen();
+}
+
 window.lockResize = function(bool) {
     if(bool) {
         window.external.LockResizeScreen();
@@ -59,10 +67,6 @@ window.alert = function(message, title) {
     if(sessionStorage.getItem("$one-time-reload-pattern")) {
         window.external.Alert(message, title);
     }
-}
-
-window.responsivityTrigger = function() {
-    window.external.ResponsiveTrigger();
 }
 
 //console contains all available functionality related to using the development tools console.

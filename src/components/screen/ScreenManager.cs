@@ -11,6 +11,14 @@ namespace Htapps.components.screen
 {
     public static class ScreenManager
     {
+        public static void MinimizeScreen(MainScreen screen)
+        {
+            screen.WindowState = FormWindowState.Minimized;
+        }
+        public static void MaximizeScreen(MainScreen screen)
+        {
+            screen.WindowState = FormWindowState.Maximized;
+        }
         public static void ResizeScreen(int x, int y, MainScreen screen)
         {
             screen.WindowState = FormWindowState.Normal;

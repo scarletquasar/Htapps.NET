@@ -42,6 +42,8 @@ namespace Htapps
         //Screen Functions
         public void SetIcon(string url) { ScreenManager.SetIcon(url, this); }
         public void SetTitle(string new_title) { ScreenManager.SetTitle(new_title, this); }
+        public void MinimizeScreen() { ScreenManager.MinimizeScreen(this); }
+        public void MaximizeScreen() { ScreenManager.MaximizeScreen(this); }
         public void LockResizeScreen() { ScreenManager.LockResizeScreen(this); }
         public void UnlockResizeScreen() { ScreenManager.UnlockResizeScreen(this); }
         public void LockMaximize() { ScreenManager.LockMaximize(this); }
@@ -55,7 +57,7 @@ namespace Htapps
 
         public void Import(string url) { LifecycleManager.Import(url, browserScreen); }
         public void ImportStyle(string url) { LifecycleManager.ImportStyle(url, browserScreen); }
-        public void Exit() { LifecycleManager.Exit(); }
+        public void Exit() { Environment.Exit(0); }
 
         //Webservices Functions
         public async Task WebFetch(string t, string m, string c_t, string h, string b, string c) 
