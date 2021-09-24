@@ -3,6 +3,10 @@ window.onerror = function(e) {
     console.error(e);
 };
 
+window.close = function() {
+    window.external.Exit();
+}
+
 window.resizeScreen = function(x, y) {
     if(typeof x != "number") x = 0;
     if(typeof y != "number") y = 0;

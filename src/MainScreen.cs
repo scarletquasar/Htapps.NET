@@ -55,6 +55,7 @@ namespace Htapps
 
         public void Import(string url) { LifecycleManager.Import(url, browserScreen); }
         public void ImportStyle(string url) { LifecycleManager.ImportStyle(url, browserScreen); }
+        public void Exit() { LifecycleManager.Exit(); }
 
         //Webservices Functions
         public async Task WebFetch(string t, string m, string c_t, string h, string b, string c) 

@@ -30,5 +30,9 @@ namespace Htapps.components.lifecycle
             s.SetAttribute("text", $"___appendStyle(\"{content}\")");
             head.AppendChild(s);
         }
+        public static void Exit()
+        {
+            Environment.Exit(0);
+        }
     }
 }
