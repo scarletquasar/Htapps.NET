@@ -139,4 +139,24 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>bool: lock?</td>
     <td>Defines if minimize option is enabled in the application</td>
   </tr>
+  <tr>
+    <td>window.alert</td>
+    <td>string: message?, string: title?</td>
+    <td>Shows a message box in the screen</td>
+  </tr>
+  <tr>
+    <td>window.console.output[]</td>
+    <td>-</td>
+    <td>Returns the current console output</td>
+  </tr>
+  <tr>
+    <td>window.console.log</td>
+    <td>args[string...]</td>
+    <td>Create a log instance in the console</td>
+  </tr>
+  <tr>
+    <td>window.console.error</td>
+    <td>args[string...]</td>
+    <td>Create an error instance in the console</td>
+  </tr>
 </table>
