@@ -1,6 +1,5 @@
 ### Todo List
 
-**`localStorage support`**<br>
 **`Adapt fetch to promise mode (currently callback)`**<br>
 **`JavaScript style adapter library`**<br>
 **`Install keybook.js`**<br>
