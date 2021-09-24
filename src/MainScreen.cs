@@ -61,8 +61,10 @@ namespace Htapps
         //Storage Functions
         public void LocalStorageStore(string key, string value) { StorageManager.LocalStorageStore(key, value, browserScreen); }
         public string LocalStorageGet(string key) { return StorageManager.LocalStorageGet(key, browserScreen); }
+        public void LocalStorageClear() { StorageManager.LocalStorageClear(browserScreen); }
         public void SessionStorageStore(string key, string value) { StorageManager.SessionStorageStore(key, value); }
         public string SessionStorageGet(string key) { return StorageManager.SessionStorageGet(key); }
+        public void SessionStorageClear() { StorageManager.SessionStorageClear(); }
 
     }
 }

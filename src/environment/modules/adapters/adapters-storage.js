@@ -1,4 +1,8 @@
 var sessionStorage = {
+    clear: function() {
+        window.external.SessionStorageClear();
+    },
+
     setItem: function(key, value) {
         window.external.SessionStorageStore(key, value);
     },
@@ -9,6 +13,10 @@ var sessionStorage = {
 }
 
 var localStorage = {
+    clear: function() {
+        window.external.LocalStorageClear();
+    },
+
     setItem: function(key, value) {
         window.external.LocalStorageStore(key, value);
     },

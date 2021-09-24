@@ -38,7 +38,7 @@ namespace Htapps.components.storage
             }
             catch(Exception e)
             {
-                browserScreen.Document.InvokeScript("alert", e.ToString().Split(' '));
+                browserScreen.Document.InvokeScript("window.console.log", e.ToString().Split(' '));
             }
         }
         public static string LocalStorageGet(string key, WebBrowser browserScreen)
@@ -63,9 +63,23 @@ namespace Htapps.components.storage
             }
             catch (Exception e)
             {
-                browserScreen.Document.InvokeScript("alert", e.ToString().Split(' '));
+                browserScreen.Document.InvokeScript("window.console.log", e.ToString().Split(' '));
             }
             return "undefined";
+        }
+        public static void LocalStorageClear(WebBrowser browserScreen)
+        {
+            try
+            {
+                if (File.Exists("./environment/modules/storage/local.yml"))
+                {
+                    File.Delete("./environment/modules/storage/local.yml");
+                }
+            }
+            catch (Exception e)
+            {
+                browserScreen.Document.InvokeScript("window.console.log", e.ToString().Split(' '));
+            }
         }
         public static void SessionStorageStore(string key, string value)
         {
@@ -74,14 +88,19 @@ namespace Htapps.components.storage
 
         public static string SessionStorageGet(string key)
         {
-            if (GlobalStorage.Dictionary.ContainsKey(key))
+            try
             {
-                return GlobalStorage.Dictionary[key];
+                if (GlobalStorage.Dictionary.ContainsKey(key))
+                {
+                    return GlobalStorage.Dictionary[key];
+                }
             }
-            else
-            {
-                return "empty";
-            }
+            catch { }
+            return "undefined";
+        }
+        public static void SessionStorageClear()
+        {
+            GlobalStorage.Dictionary = new Dictionary<string, string>();
         }
     }
 }
