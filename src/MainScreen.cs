@@ -10,22 +10,21 @@ using Htapps.components.screen;
 using Htapps.components.lifecycle;
 using Htapps.components.webservices;
 using Htapps.components.storage;
+using Htapps.components.parsers;
 
 namespace Htapps
 {
     [System.Runtime.InteropServices.ComVisibleAttribute(true)]
     public partial class MainScreen : Form
     {
-        string AppPath = AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/")
-        .Remove(AppDomain.CurrentDomain.BaseDirectory.Replace("\\", "/").Length - 1) + "/environment/";
+
 
         public MainScreen()
         {
             InitializeComponent();
             browserScreen.ObjectForScripting = this;
-            browserScreen.Document.Write(File.ReadAllText("./environment/index.html")
-            .Replace("{app}", File.ReadAllText("./environment/app.html"))
-            .Replace("{appPath}", AppPath));
+            string content = EnvParser.Execute(File.ReadAllText("./environment/index.html"));
+            browserScreen.Document.Write(content);
         }
 
         private void MainScreen_Resize(object sender, EventArgs e)
