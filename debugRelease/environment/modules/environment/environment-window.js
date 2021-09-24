@@ -1,4 +1,7 @@
 //Setup of important window features for the application's operation.
+window.configuration = {
+    usePromises: true
+}
 window.onerror = function(e) {
     console.error(e);
 };
