@@ -159,6 +159,16 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>args[string...]</td>
     <td>Create an error instance in the console</td>
   </tr>
+  <tr>
+    <td>use</td>
+    <td>string: [/environment/+path]</td>
+    <td>Import a script dinamically</td>
+  </tr>
+  <tr>
+    <td>useStyle</td>
+    <td>string: [/environment/+path]</td>
+    <td>Import a css file dinamically</td>
+  </tr>
 </table>
 <br>
 <h2>External Libraries</h2>
