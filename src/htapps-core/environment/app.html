@@ -26,13 +26,25 @@
             clear: function() {
                 this.size = 0;
                 this.content = [];
+            },
+            remove: function(x) {
+                var final = [];
+                this.content.forEach(function(n) {
+                    if (n != x) {
+                        final.push(n);
+                    }
+                    else {
+                        this.size--;
+                    }
+                });
+                this.content = final;
             }
         };
     }
 
 var a = new Set(["xax", "xax", "xole"]);
-a.add('xax');
-alert(a.size);
-a.add("plus");
-alert(a.size);
+
+a.remove("xax");
+
+alert(a.content);
 </script>
