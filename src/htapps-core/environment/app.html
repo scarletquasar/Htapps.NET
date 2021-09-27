@@ -1,0 +1,30 @@
+<script>
+    function Set(args) {
+        content = [];
+        define = function() {
+            Array.from(args).forEach(function(x) {
+                if(!content.includes(x)) {
+                    content.push(x);
+                }
+            });
+        }
+        
+        define();
+        return {
+            content: content,
+            add: function(x) {
+                if(!this.content.includes(x)) {
+                    this.content.push(x);
+                }
+                else {
+                    return false;
+                }
+                return true;
+            }
+        };
+    }
+
+var a = new Set(["xax", "xax", "xole"]);
+a.add('xax');
+alert(a.content);
+</script>
