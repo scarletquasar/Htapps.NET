@@ -38,13 +38,15 @@
                     }
                 });
                 this.content = final;
+            },
+            forEach: function(callback) {
+                return this.content.forEach(callback);
             }
         };
     }
 
 var a = new Set(["xax", "xax", "xole"]);
-
-a.remove("xax");
-
-alert(a.content);
+a.forEach(function(n) {
+    alert(n);
+});
 </script>
