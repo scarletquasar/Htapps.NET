@@ -65,10 +65,10 @@ window.lockMinimize = function(bool) {
 }
 
 window.alert = function(message, title) {
-    if(!message) message = " ";
-    if(!title) title = " ";
+    if(message == undefined) message = " ";
+    if(title == undefined) title = " ";
     if(sessionStorage.getItem("$one-time-reload-pattern")) {
-        window.external.Alert(message, title);
+        window.external.Alert(message.toString(), title.toString());
     }
 }
 

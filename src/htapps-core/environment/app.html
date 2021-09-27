@@ -12,19 +12,27 @@
         define();
         return {
             content: content,
+            size: content.length,
             add: function(x) {
                 if(!this.content.includes(x)) {
+                    this.size++;
                     this.content.push(x);
                 }
                 else {
                     return false;
                 }
                 return true;
+            },
+            clear: function() {
+                this.size = 0;
+                this.content = [];
             }
         };
     }
 
 var a = new Set(["xax", "xax", "xole"]);
 a.add('xax');
-alert(a.content);
+alert(a.size);
+a.add("plus");
+alert(a.size);
 </script>
