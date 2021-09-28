@@ -1,4 +1,5 @@
 -> New | "Set" feature support
 --> Due to limitations, "Set delete" function is now "Set remove"
 --> No support to "Set entries" function
+--> No support to "Set values" function
 -> Fix | Now "window.alert" displays the values correctly
