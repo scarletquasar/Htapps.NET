@@ -1,6 +1,7 @@
 <h1>Htapps</h1>
-Htapps is a HTML/CSS/JS provider to ease the development of simple applications that can run as windows programs. Currently in <b>Alpha 1.0.0</b>.
-
+Htapps is a HTML/CSS/JS provider to ease the development of simple applications that can run as windows programs. Currently in <b>Alpha 1.1.0</b>.
+<br>
+You can check <b>CHANGELOG.MD</b> for more informations.
 <br>
 <h2>Usage</h2>
 To get started in the Htapps development you can clone the repository and go to <b>/src/htapps-project/</b>.
