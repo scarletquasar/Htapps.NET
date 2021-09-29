@@ -171,6 +171,9 @@ Currently the Htapps runtime environment supports most of the modern functionali
   </tr>
 </table>
 <br>
+<h2>TODO</h2>
+-> Hardcode polyfills in .NET modules to improve performance and other factors.
+<br>
 <h2>External Libraries</h2>
 https://github.com/jonathantneal/flexibility - Flexbox Support<br>
 https://github.com/petkaantonov/bluebird - Promises Support
