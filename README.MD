@@ -174,6 +174,7 @@ Currently the Htapps runtime environment supports most of the modern functionali
 <h2>TODO [v1.2+]</h2>
 -> Hardcode polyfills in .NET modules to improve performance and other factors.<br>
 -> Make an object scripting API to access various features of .NET environment<br>
+-> Make an system management API to access Windows features and management (authorized mode)<br>
 -> Decent Display Flex Support (currently working with problems)<br>
 -> Display Grid Support<br>
 -> Make example applications to show the usage of HTAPPS
