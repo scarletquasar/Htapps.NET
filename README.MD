@@ -177,7 +177,8 @@ Currently the Htapps runtime environment supports most of the modern functionali
 -> Make an system management API to access Windows features and management (authorized mode);<br>
 -> Decent Display Flex Support (currently working with problems);<br>
 -> Display Grid Support;<br>
--> Make example applications to show the usage of HTAPPS
+-> Make example applications to show the usage of HTAPPS;<br>
+-> External media reading support/review (.XLSX, .DOCX, .PPTX, Video/Audio types...)
 <br>
 <h2>External Libraries</h2>
 https://github.com/jonathantneal/flexibility - Flexbox Support<br>
