@@ -181,6 +181,9 @@ Currently the Htapps runtime environment supports most of the modern functionali
 -> External media reading support/review (.XLSX, .DOCX, .PPTX, Video/Audio types...);<br>
 -> Disable DLL output in build to promote more portability
 <br>
+<h2> Limitations </h2>
+It doesn't support modern syntax features like arrow functions, const variables and has the reserved words: delete/return even inside complex objects.
+<br>
 <h2>External Libraries</h2>
 https://github.com/jonathantneal/flexibility - Flexbox Support<br>
 https://github.com/petkaantonov/bluebird - Promises Support
