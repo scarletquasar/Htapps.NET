@@ -20,6 +20,12 @@ Currently the Htapps runtime environment supports most of the modern functionali
     <td>Deprecated?</td>
   </tr>
   <tr>
+    <td>Set</td>
+    <td>Working with limitations</td>
+    <td>Alpha 2</td>
+    <td>No</td>
+  </tr>
+  <tr>
     <td>window.fetch API</td>
     <td>Working with limitations</td>
     <td>Alpha</td>
